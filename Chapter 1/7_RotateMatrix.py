@@ -4,6 +4,11 @@ import unittest
 
 def rotate_matrix(matrix):
     '''rotates a matrix 90 degrees clockwise'''
+    rotated_matrix = [[] for _ in range(len(matrix[0]))]
+    for vector_ii in matrix:
+        for jj, value in enumerate(vector_ii):
+            rotated_matrix[jj].insert(0, value)
+    return rotated_matrix
 
 
 

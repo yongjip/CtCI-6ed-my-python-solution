@@ -16,6 +16,9 @@ def unique(string):
         char_set[val] = True
     return True
 
+# Another solution
+def unique(string):
+    return len(set(string)) == len(string)
 
 class Test(unittest.TestCase):
     dataT = [('abcd'), ('s4fad'), ('')]

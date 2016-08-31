@@ -1,21 +1,21 @@
 # O(NlogN)
 # Given two strings, write a method to decide if one is a permutation of the other.
 import unittest
-from collections import defaultdict, Counter
+from collections import Counter
 
 
-def check_permutation(string):
+def check_permutation(strings):
     # function checks if a string is permutation of another
-    if len(string) != 2 or len(string[0]) != len(string[1]):
+    # they must have the same length and the same # of each letter
+    if len(strings) != 2 or len(strings[0]) != len(strings[1]):
         return False
     checker = {0: Counter(), 1: Counter()}
-    for i, string_i in enumerate(string):
+    for i, string_i in enumerate(strings):
         for letter in string_i:
             checker[i][letter] += 1
     if checker[0] == checker[1]:
         return True
     return False
-
 
 
 class Test(unittest.TestCase):
